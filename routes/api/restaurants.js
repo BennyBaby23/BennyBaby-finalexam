@@ -60,7 +60,8 @@ router.post('/', (req,res,next) => {
     });
 
 
-//delete
+//delete functionality with id
+//Removes the restaurant from the database
 router.delete('/_id', (req, res, next)=>{
     Restaurant.remove({
         _id: req.params._id
@@ -75,4 +76,5 @@ router.delete('/_id', (req, res, next)=>{
     })
 });
 
+//export the module to use it in app.js
 module.exports = router;
