@@ -7,6 +7,8 @@ const mongoose = require('mongoose');
 const config = require('./config/globals');
 
 var indexRouter = require('./routes/index');
+//api endpoints routers for api routes
+var restaurantApiRouter = require('./routes/api/restaurants');
 
 
 var app = express();
@@ -21,7 +23,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//set up the app.use for api router
 app.use('/', indexRouter);
+app.use('/api/restaurants', restaurantApiRouter);
 
 //connect mongoose mongodb
 mongoose.connect(config.db, {useNewUrlParser: true, useUnifiedTopology: true })

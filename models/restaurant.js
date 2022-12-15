@@ -11,7 +11,7 @@ const schemaDefinition = {
   address: { type: String, required: true },
   phoneNumber: { type: Number, required: true },
   emailAddress: { type: String},
-  rating: { type: Number, max: 10, required: true }
+  rating: { type: Number, max: 10 }
   
 }
 
